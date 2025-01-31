@@ -32,8 +32,42 @@ def recombine(leftArr, rightArr):
     for i in range(leftIndex, len(leftArr)):
         mergeArr[size] = leftArr[i]
         size += 1
-
+    
     return mergeArr
+
+def is_happy(n):
+    """
+    Determines if a number is a happy number.
+    :type n: int
+    :rtype: bool
+    """
+    
+    def find_sum_of_digit(num):
+        """
+        Helper function to calculate the sum of squares of the digits of a number.
+        :type num: int
+        :rtype: int
+        """
+        string_num = str(num)
+        result_sum = 0
+        for digit in string_num:
+            result_sum += int(digit) ** 2
+        return result_sum
+
+    seen_numbers = {}
+    while True:
+        if n in seen_numbers:
+            return False
+        seen_numbers[n] = n
+        if n == 1:
+            return True
+        n = find_sum_of_digit(n)
+
+
+# Example usage
+HAPPY_NUMBER = 19
+IS_HAPPY_RESULT = is_happy(HAPPY_NUMBER)
+print(f"Is {HAPPY_NUMBER} a happy number? {IS_HAPPY_RESULT}")
 
 arr = rand.random_array([None] * 20)
 print(arr)
