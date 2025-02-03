@@ -63,7 +63,6 @@ def is_happy(n):
     :type n: int
     :rtype: bool
     """
-    
     def find_sum_of_digit(num):
         """
         Helper function to calculate the sum of squares of the digits of a number.

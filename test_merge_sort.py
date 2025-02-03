@@ -1,7 +1,7 @@
 """
 Unit tests for the mergeSort function from hw2_debugging.py
 """
-from hw2_debugging import mergeSort
+from hw2_debugging import merge_sort
 
 def test_unsorted_array_with_unique_elements():
     """
@@ -9,7 +9,7 @@ def test_unsorted_array_with_unique_elements():
     """
     arr = [38, 27, 43, 3, 9, 82, 10]
     expected = [3, 9, 10, 27, 38, 43, 82]
-    assert mergeSort(arr) == expected
+    assert merge_sort(arr) == expected
 
 def test_array_with_duplicates():
     """
@@ -17,7 +17,7 @@ def test_array_with_duplicates():
     """
     arr = [5, 1, 4, 2, 8, 5, 3]
     expected = [1, 2, 3, 4, 5, 5, 8]
-    assert mergeSort(arr) == expected
+    assert merge_sort(arr) == expected
 
 def test_already_sorted_array():
     """
@@ -25,7 +25,7 @@ def test_already_sorted_array():
     """
     arr = [1, 2, 3, 4, 5]
     expected = [1, 2, 3, 4, 5]
-    assert mergeSort(arr) == expected
+    assert merge_sort(arr) == expected
 
 def test_empty_array():
     """
@@ -33,7 +33,7 @@ def test_empty_array():
     """
     arr = []
     expected = []
-    assert mergeSort(arr) == expected
+    assert merge_sort(arr) == expected
 
 def test_one_item_in_list():
     """
@@ -41,4 +41,4 @@ def test_one_item_in_list():
     """
     arr = [100]
     expected = [100]
-    assert mergeSort(arr) == expected
+    assert merge_sort(arr) == expected

@@ -1,9 +1,7 @@
 name: Python Tests
 
 on:
-  push:
-    branches:
-      - main
+  push: # Run tests on every commit
   pull_request:
     branches:
       - main
@@ -25,10 +23,20 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install pylint radon
 
     - name: Run tests
-      run: pytest test.py
+      run: pytest test_merge_sort.py
 
-    - name: running pylint
+    - name: running pylint #ocmberi contribution
+      continue-on-error: true
       run: |
-        pylint hw2_debugging.py rand.py > pylint_report.txt
+        mkdir -p post_traces
+        pylint hw2_debugging.py rand.py > post_traces/pylint_report.txt
+
+    - name: running radon #mworkuk contribution
+      continue-on-error: true
+      run: |
+        mkdir -p post_traces
+        radon cc hw2_debugging.py rand.py > post_traces/radon_report.txt
+
