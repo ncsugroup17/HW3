@@ -27,4 +27,11 @@ jobs:
     - name: Run tests
       run: pytest test_merge_sort.py
 
-    - name: 
+    - name: running pylint #ocmberi contribution
+      run: |
+        pylint hw2_debugging.py rand.py > pylint_report.txt
+
+    - name: running radon #mworkuk contribution
+      run: |
+        radon cc hw2_debugging.py rand.py > radon_report.txt
+
