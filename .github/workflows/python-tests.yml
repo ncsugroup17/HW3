@@ -1,9 +1,7 @@
 name: Python Tests
 
 on:
-  push:
-    branches:
-      - main
+  push: # Run tests on every commit
   pull_request:
     branches:
       - main
@@ -27,4 +25,6 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run tests
-      run: pytest test.py
+      run: pytest test_merge_sort.py
+
+    - name: 
