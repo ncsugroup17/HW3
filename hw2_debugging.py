@@ -84,16 +84,16 @@ def is_happy(n):
             return True
         n = find_sum_of_digit(n)
 
-def find_max(numbers):
+def find_max(num):
     """
     Find the largest number in a list of numbers.
-    :type numbers: List[int]
+    :type num: List[int]
     :rtype: int
     """
-    max_num = numbers[0]  
-    for num in numbers:
-        if num > max_num:
-            max_num = num  
+    max_num = num[0]
+    for n in num:
+        if n > max_num:
+            max_num = n
     return max_num
 
 # Example usage:

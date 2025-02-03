@@ -23,7 +23,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install pylint radon
+        pip install pylint radon pyflaskes
 
     - name: Run tests
       run: pytest test_merge_sort.py
@@ -33,6 +33,12 @@ jobs:
       run: |
         mkdir -p post_traces
         pylint hw2_debugging.py rand.py > post_traces/pylint_report.txt
+        
+    - name: running pyflakes #pthapa4 contribution
+      continue-on-error: true
+      run: |
+        mkdir -p post_traces
+        pyflakes hw2_debugging.py rand.py > post_traces/pyflakes_report.txt
 
     - name: running radon #mworkuk contribution
       continue-on-error: true
