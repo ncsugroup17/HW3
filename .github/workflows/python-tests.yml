@@ -29,9 +29,9 @@ jobs:
 
     - name: running pylint #ocmberi contribution
       run: |
-        pylint hw2_debugging.py rand.py > pylint_report.txt
+        pylint hw2_debugging.py rand.py > post_traces/pylint_report.txt
 
     - name: running radon #mworkuk contribution
       run: |
-        radon cc hw2_debugging.py rand.py > radon_report.txt
+        radon cc hw2_debugging.py rand.py > post_traces/radon_report.txt
 
