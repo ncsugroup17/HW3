@@ -28,3 +28,7 @@ jobs:
 
     - name: Run tests
       run: pytest test.py
+
+    - name: running pylint
+    - run: |
+        pylint hw2_debugging.py rand.py > pylint_report.txt
